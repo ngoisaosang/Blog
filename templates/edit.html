@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Chỉnh sửa "{{ post['title'] }}"</h2>
+    <form method="post" class="post-form">
+        <div class="form-group">
+            <label for="title">Tiêu đề</label>
+            <input type="text" name="title" placeholder="Nhập tiêu đề bài viết" class="form-control" value="{{ request.form['title'] or post['title'] }}"></input>
+            </div>
+
+            <div class="form-group>
+            <label for="content">Nội dung</label>
+            <textarea name="content" placeholder="Nhập nội dung bài viết" class="form-control">{{ request.form['content'] or post['content'] }}</textarea>
+            </div>
+            <div class="form-group">
+            <button type="submit" class="btn btn-submit">Lưu thay đổi</button>
+            </div>
+        </form>
+{% endblock %}

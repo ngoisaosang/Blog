@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <header>
+        <h2>Danh sách bài viết</h2>
+    </header>
+
+    {% for post in posts %}
+    <article class="post-item">
+        <a href="{{ url_for('post', post_id=post['id']) }}">
+            <h3>{{ post['title'] }}</h3>
+        </a>
+        <div class="post-meta">
+            <span class="post-date">Ngày tạo: {{ post['created'] }}</span>
+            <div class="post-actions">
+                <a href="{{ url_for('edit', id=post['id']) }}" class="btn btn-edit">Sửa</a>
+                <!-- Sử dụng confirm mặc định của trình duyệt -->
+                <form action="{{ url_for('delete', id=post['id']) }}" method="POST" onsubmit="return confirm('Bạn có chắc chắn muốn xoá bài viết này không?');">
+                    <button type="submit" class="btn btn-delete">Xóa</button>
+                </form>
+            </div>
+        </div>
+    </article>
+    {% endfor %}
+
+{% endblock %}

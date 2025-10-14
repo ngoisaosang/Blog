@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <article class="post-detail">
+        <h2>{{ post['title']}}</h2>
+            <div class="post-detail-date">Ngày tạo: {{ post['created'] }}</div>
+        <hr>
+        <div class="post-detail-content">
+            <p>{{ post['content']|safe }}</p>
+        </div>
+        </article>
+
+        <hr>
+
+        <div class="post-actions" style="justify-content: flex-end; margin-top: 1rem;">
+            <a href="{{ url_for('edit', id=post['id']) }}" class="btn btn-edit">Sửa</a>
+            <!-- Sử dụng confirm mặc định của trình duyệt -->
+            <form action="{{ url_for('delete', id=post['id']) }}" method="POST" onsubmit="return confirm('Bạn có chắc chắn muốn xoá bài viết này không?');">
+                <button type="submit" class="btn btn-delete">Xóa</button>
+            </form>
+        </div>
+    
+{% endblock %}

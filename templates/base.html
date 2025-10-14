@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Blog cơ bản</title>
+        <!-- Giả sử bạn đặt tệp css trong thư mục con static/css -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+        <!-- Giả sử bạn đặt favicon trong thư mục con static/images -->
+        <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
+    </head>
+    <body>
+        <nav>
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <h1><a href="{{ url_for('index') }}">Blog cơ bản</a></h1>
+                </div>
+                <a href="{{ url_for('create') }}" class="nav-link">Tạo bài viết mới</a>
+            </div>
+        </nav>
+        <div class="container">
+            <!-- Hiển thị các thông báo flash -->
+            {% for message in get_flashed_messages() %}
+            <div class="alert">{{ message }}</div>
+            {% endfor %}
+            
+            <!-- Nội dung chính của trang -->
+            {% block content %}{% endblock %}
+        </div>
+    </body>
+</html>

@@ -1,0 +1,149 @@
+/* General Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+}
+
+.nav-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand h1 {
+    margin: 0;
+}
+
+.nav-brand h1 a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.nav-link {
+    background-color: #5cb85c;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/* Posts List */
+.post-item {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.post-item a {
+    text-decoration: none;
+    color: #333;
+}
+
+.post-item h3 {
+    margin-top: 0;
+}
+
+.post-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #777;
+    font-size: 0.9em;
+}
+
+.post-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Buttons */
+.btn {
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+.btn-edit {
+    background-color: #f0ad4e;
+    color: white;
+}
+
+.btn-delete {
+    background-color: #d9534f;
+    color: white;
+}
+
+
+/* Post Detail Page */
+.post-detail {
+    background: #fff;
+    padding: 2rem;
+}
+
+.post-detail-date {
+    color: #777;
+    font-size: 0.9em;
+    margin-bottom: 1rem;
+}
+
+
+/* Form styles */
+.post-form .form-group {
+    margin-bottom: 1rem;
+}
+
+.post-form label {
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+.post-form .form-control {
+    width: 100%;
+    padding: 0.5rem;
+    box-sizing: border-box;
+}
+
+.post-form textarea.form-control {
+    min-height: 150px;
+}
+
+.btn-submit {
+    background-color: #0275d8;
+    color: white;
+    padding: 0.7rem 1.2rem;
+}
+
+/* Alert messages */
+.alert {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    background-color: #d1ecf1;
+    color: #0c5460;
+    border-color: #bee5eb;
+}
+
