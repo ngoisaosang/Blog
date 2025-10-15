@@ -237,7 +237,7 @@ nav {
 
 .post-form textarea.form-control {
     min-height: 250px;
-    resize: vertical;
+    resize: none;
     font-family: inherit;
 }
 
@@ -282,4 +282,6 @@ nav {
         margin-top: 0.75rem;
     }
 }
+
+
 
