@@ -3,12 +3,12 @@
 
 /* --- CSS Variables for Easy Theme Management --- */
 :root {
-    --primary-color: #007bff;
-    --primary-hover: #0056b3;
+    --primary-color: #f97316; /* Warm Amber/Orange color */
+    --primary-hover: #ea580c; /* Darker Amber for hover */
     --secondary-color: #6c757d;
     --success-color: #28a745;
     --danger-color: #dc3545;
-    --light-bg: #f4f7f9;
+    --light-bg: #f8fafc; /* Slightly lighter background */
     --text-color: #343a40;
     --border-color: #dee2e6;
     --white-color: #ffffff;
@@ -232,7 +232,7 @@ nav {
 .form-control:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.25);
 }
 
 .post-form textarea.form-control {
@@ -282,5 +282,4 @@ nav {
         margin-top: 0.75rem;
     }
 }
-
 
