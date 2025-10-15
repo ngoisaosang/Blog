@@ -1,7 +1,7 @@
-/* General Body Styles */
+/* --- General Body and Layout --- */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Inter', sans-serif;
+    background-color: #f8f9fa;
     color: #333;
     margin: 0;
     line-height: 1.6;
@@ -10,20 +10,38 @@ body {
 .container {
     max-width: 800px;
     margin: 2rem auto;
-    padding: 0 1.5rem;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Navigation Bar */
+a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #e9ecef;
+    margin: 2rem 0;
+}
+
+/* --- Navigation Bar --- */
 nav {
-    background-color: #333;
-    color: #fff;
-    padding: 1rem 0;
+    background-color: #ffffff;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #e9ecef;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .nav-container {
     max-width: 800px;
     margin: 0 auto;
-    padding: 0 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -31,119 +49,181 @@ nav {
 
 .nav-brand h1 {
     margin: 0;
+    font-size: 1.5rem;
 }
 
-.nav-brand h1 a {
-    text-decoration: none;
-    color: #fff;
+.nav-brand a {
+    color: #333;
+    font-weight: 700;
 }
 
 .nav-link {
-    background-color: #5cb85c;
-    color: #fff;
+    background-color: #3498db;
+    color: white;
     padding: 0.5rem 1rem;
-    border-radius: 5px;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.nav-link:hover {
+    background-color: #2980b9;
     text-decoration: none;
 }
 
-/* Posts List */
-.post-item {
-    background: #fff;
-    border: 1px solid #ddd;
+/* --- Flash Messages (Alerts) --- */
+.alert {
     padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 6px;
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+
+/* --- Post Listing (index.html) --- */
+.posts-header {
+    border-bottom: 2px solid #3498db;
+    margin-bottom: 2rem;
+    padding-bottom: 0.5rem;
+}
+
+.posts-header h2 {
+    margin: 0;
+}
+
+.post-item {
+    padding: 1.5rem;
     margin-bottom: 1rem;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.post-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px);
 }
 
 .post-item a {
     text-decoration: none;
-    color: #333;
+    color: inherit;
 }
 
 .post-item h3 {
     margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: #343a40;
 }
 
 .post-meta {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: #777;
-    font-size: 0.9em;
+    font-size: 0.9rem;
+    color: #6c757d;
 }
 
 .post-actions {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 8px; /* Create space between buttons */
 }
 
-/* Buttons */
+/* --- The definitive button fix --- */
 .btn {
-    padding: 0.3rem 0.6rem;
-    border-radius: 4px;
+    display: inline-flex; /* Use Flexbox for perfect centering */
+    align-items: center;
+    justify-content: center;
+    padding: 6px 12px;   /* Standardized padding */
+    border-radius: 5px;
+    font-family: inherit; /* Ensure both use the same font */
+    font-size: 14px;      /* Explicit font size */
+    font-weight: 700;     /* Bold text */
     text-decoration: none;
     cursor: pointer;
-    border: 1px solid transparent;
+    border: 1px solid transparent; /* Start with a transparent border */
+    line-height: 1.2;     /* Consistent line height */
+    box-sizing: border-box; /* Ensures padding/border are included in the size */
+    transition: all 0.2s ease-in-out;
+    vertical-align: middle;
 }
 
 .btn-edit {
-    background-color: #f0ad4e;
+    background-color: #3498db;
     color: white;
 }
 
 .btn-delete {
-    background-color: #d9534f;
+    background-color: #e74c3c;
     color: white;
 }
 
-
-/* Post Detail Page */
-.post-detail {
-    background: #fff;
-    padding: 2rem;
+.post-actions form {
+    margin: 0; /* Remove default form margin */
+    padding: 0;
+    display: inline-flex; /* Make form not take up block space */
 }
+/* --- End of button fix --- */
 
+
+/* --- Post Detail (post.html) --- */
+.post-detail h2 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
 .post-detail-date {
-    color: #777;
-    font-size: 0.9em;
-    margin-bottom: 1rem;
+    color: #6c757d;
+    margin-bottom: 1.5rem;
+}
+.post-detail-content p {
+    font-size: 1.1rem;
+    line-height: 1.7;
 }
 
-
-/* Form styles */
-.post-form .form-group {
-    margin-bottom: 1rem;
+/* --- Forms (create.html / edit.html) --- */
+.post-form h2 {
+    margin-top: 0;
 }
 
-.post-form label {
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
     display: block;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
 }
 
-.post-form .form-control {
+.form-control {
     width: 100%;
-    padding: 0.5rem;
-    box-sizing: border-box;
+    padding: 0.75rem;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    font-size: 1rem;
+    box-sizing: border-box; /* Important for width calculation */
 }
 
 .post-form textarea.form-control {
-    min-height: 150px;
+    min-height: 200px;
+    resize: none; /* Disable resizing */
+    font-family: inherit;
 }
 
 .btn-submit {
-    background-color: #0275d8;
+    background-color: #28a745;
     color: white;
-    padding: 0.7rem 1.2rem;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
 }
 
-/* Alert messages */
-.alert {
-    padding: 1rem;
-    margin-bottom: 1rem;
-    border: 1px solid transparent;
-    border-radius: 0.25rem;
-    background-color: #d1ecf1;
-    color: #0c5460;
-    border-color: #bee5eb;
+.btn-submit:hover {
+    background-color: #218838;
 }
 
